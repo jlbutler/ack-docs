@@ -6,6 +6,5 @@
 bin
 build
 node_modules
-build
 .docusaurus
 /cmd/gen-services/gen-services
