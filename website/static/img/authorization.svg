@@ -1,0 +1,96 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <style>
+      .cluster { fill: none; stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 5,5; rx: 12; }
+      .component { fill: #fff; stroke: #4a5568; stroke-width: 2; rx: 8; }
+      .controller { fill: #fff; stroke: #ff9520; stroke-width: 2; rx: 8; }
+      .role { fill: #fff7ed; stroke: #f59e0b; stroke-width: 2; rx: 8; }
+      .user { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8; }
+      .text { fill: #2d3748; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; text-rendering: optimizeLegibility; }
+      .label { fill: #718096; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 400; text-rendering: optimizeLegibility; }
+      .cluster-label { fill: #4a5568; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 600; text-rendering: optimizeLegibility; }
+      .arrow { stroke: #ff9520; stroke-width: 2; fill: none; marker-end: url(#arrowhead-orange); }
+      .arrow-blue { stroke: #3b82f6; stroke-width: 2; fill: none; marker-end: url(#arrowhead-blue); }
+      .small-text { fill: #718096; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; text-anchor: middle; text-rendering: optimizeLegibility; }
+    </style>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ff9520" />
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+  </defs>
+
+  <!-- Kubernetes Cluster -->
+  <rect class="cluster" x="20" y="20" width="460" height="410" />
+  <text class="cluster-label" x="35" y="42">Kubernetes Cluster</text>
+
+  <!-- Kubernetes User -->
+  <rect class="user" x="50" y="70" width="140" height="50" />
+  <text class="text" x="120" y="92">Kubernetes User</text>
+  <text class="small-text" x="120" y="107">(kubectl)</text>
+
+  <!-- Kubernetes RBAC -->
+  <rect class="component" x="50" y="170" width="140" height="50" />
+  <text class="text" x="120" y="192">Kubernetes RBAC</text>
+  <text class="small-text" x="120" y="207">Roles &amp; RoleBindings</text>
+
+  <!-- ACK Custom Resources -->
+  <rect class="component" x="50" y="270" width="140" height="50" />
+  <text class="text" x="120" y="292">ACK Custom</text>
+  <text class="text" x="120" y="307">Resources</text>
+
+  <!-- ACK Controller Pod -->
+  <rect class="controller" x="290" y="150" width="160" height="90" />
+  <text class="text" x="370" y="185">ACK Controller Pod</text>
+  <text class="small-text" x="370" y="200">with Service Account</text>
+  <text class="small-text" x="370" y="225" style="fill: #f59e0b; font-weight: 600;">IAM Role Attached</text>
+
+  <!-- AWS IAM Role -->
+  <rect class="role" x="540" y="70" width="220" height="80" />
+  <text class="text" x="650" y="102">AWS IAM Role</text>
+  <text class="small-text" x="650" y="117">Attached to Service Account</text>
+  <text class="small-text" x="650" y="132">via IRSA or PodIdentity</text>
+
+  <!-- AWS APIs -->
+  <rect class="component" x="540" y="270" width="220" height="80" />
+  <text class="text" x="650" y="302">AWS Service APIs</text>
+  <text class="small-text" x="650" y="317">S3, RDS, DynamoDB, etc.</text>
+  <text class="small-text" x="650" y="332">Governed by IAM Policies</text>
+
+  <!-- Arrows and Labels -->
+
+  <!-- User to RBAC -->
+  <path class="arrow-blue" d="M 120 120 L 120 165" />
+  <text class="label" x="135" y="145" style="fill: #3b82f6;">Kubernetes RBAC</text>
+
+  <!-- RBAC to Custom Resources -->
+  <path class="arrow-blue" d="M 120 220 L 120 265" />
+  <text class="label" x="25" y="250" style="fill: #3b82f6; font-size: 10px;">Controls K8s</text>
+  <text class="label" x="25" y="262" style="fill: #3b82f6; font-size: 10px;">Resource Access</text>
+
+  <!-- Custom Resources to Controller -->
+  <path class="arrow" d="M 195 295 L 285 195" />
+  <text class="label" x="230" y="240">Watched by</text>
+  <text class="label" x="230" y="252">Controller</text>
+
+  <!-- Controller to IAM Role -->
+  <path class="arrow" d="M 455 185 L 535 110" />
+  <text class="label" x="500" y="135">Assumes</text>
+  <text class="label" x="500" y="147">IAM Role</text>
+
+  <!-- IAM Role to AWS APIs -->
+  <path class="arrow" d="M 650 150 L 650 265" />
+  <text class="label" x="690" y="210">AWS IAM</text>
+  <text class="label" x="690" y="222">Policies</text>
+
+  <!-- Controller to AWS APIs direct -->
+  <path class="arrow" d="M 455 205 L 535 305" />
+  <text class="label" x="485" y="265">AWS SDK</text>
+  <text class="label" x="485" y="277">API Calls</text>
+
+  <!-- Annotation boxes -->
+  <text class="label" x="250" y="380" style="font-weight: 600;">No Association</text>
+  <text class="label" x="250" y="395" style="font-size: 10px;">Kubernetes User ≠ IAM Role</text>
+  <text class="label" x="250" y="407" style="font-size: 10px;">IAM Role is attached to Service Account</text>
+</svg>

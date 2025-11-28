@@ -1,0 +1,52 @@
+<svg viewBox="0 0 750 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .user-box { fill: #eff6ff; stroke: #3b82f6; stroke-width: 2; rx: 8; }
+      .controller-box { fill: #fff7ed; stroke: #f59e0b; stroke-width: 2; rx: 8; }
+      .text { fill: #2d3748; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; }
+      .label { fill: #718096; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; text-anchor: middle; }
+      .arrow-blue { stroke: #3b82f6; stroke-width: 2; fill: none; marker-end: url(#arrowhead-blue); }
+      .arrow-orange { stroke: #f59e0b; stroke-width: 2; fill: none; marker-end: url(#arrowhead-orange); }
+    </style>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f59e0b" />
+    </marker>
+  </defs>
+
+  <!-- Kubernetes User -->
+  <rect class="user-box" x="40" y="30" width="180" height="70" />
+  <text class="text" x="130" y="60">Kubernetes User</text>
+  <text class="label" x="130" y="82">(kubectl)</text>
+
+  <!-- Arrow from user -->
+  <path class="arrow-blue" d="M 225 65 L 440 65" />
+  <text class="label" x="272" y="50" style="fill: #3b82f6;">Kubernetes</text>
+  <text class="label" x="272" y="63" style="fill: #3b82f6;">RBAC</text>
+
+  <!-- RBAC result -->
+  <text class="label" x="490" y="57">Can create/update</text>
+  <text class="label" x="490" y="72">ACK resources</text>
+
+  <!-- ACK Controller -->
+  <rect class="controller-box" x="40" y="140" width="180" height="70" />
+  <text class="text" x="130" y="167">ACK Controller</text>
+  <text class="label" x="130" y="189">(ServiceAccount)</text>
+
+  <!-- Arrow from controller -->
+  <path class="arrow-orange" d="M 225 175 L 440 175" />
+  <text class="label" x="272" y="160" style="fill: #f59e0b;">AWS</text>
+  <text class="label" x="272" y="173" style="fill: #f59e0b;">IAM Role</text>
+
+  <!-- IAM result -->
+  <text class="label" x="490" y="167">Can call</text>
+  <text class="label" x="490" y="182">AWS APIs</text>
+
+  <!-- Separation note -->
+  <rect fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5" x="30" y="15" width="540" height="95" rx="8" />
+  <rect fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="5,5" x="30" y="125" width="540" height="95" rx="8" />
+
+  <text class="label" x="300" y="230" style="font-weight: 600;">Independent Systems</text>
+</svg>

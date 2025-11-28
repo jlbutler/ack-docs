@@ -1,0 +1,54 @@
+<svg viewBox="0 0 750 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .cluster { fill: none; stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 5,5; rx: 12; }
+      .controller { fill: #fff; stroke: #ff9520; stroke-width: 2; rx: 8; }
+      .api { fill: #fff; stroke: #4a5568; stroke-width: 2; rx: 8; }
+      .text { fill: #2d3748; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; }
+      .label { fill: #718096; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; font-weight: 400; }
+      .cluster-label { fill: #4a5568; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; font-weight: 600; }
+      .arrow { stroke: #ff9520; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ff9520" />
+    </marker>
+  </defs>
+
+  <!-- Kubernetes Cluster Box -->
+  <rect class="cluster" x="20" y="20" width="280" height="260" />
+  <text class="cluster-label" x="35" y="42">Kubernetes Cluster</text>
+
+  <!-- S3 Controller -->
+  <rect class="controller" x="40" y="70" width="140" height="45" />
+  <text class="text" x="110" y="97">S3 Controller</text>
+
+  <!-- RDS Controller -->
+  <rect class="controller" x="40" y="135" width="140" height="45" />
+  <text class="text" x="110" y="162">RDS Controller</text>
+
+  <!-- DynamoDB Controller -->
+  <rect class="controller" x="40" y="200" width="140" height="45" />
+  <text class="text" x="110" y="227">DynamoDB</text>
+
+  <!-- AWS S3 API -->
+  <rect class="api" x="500" y="70" width="220" height="45" />
+  <text class="text" x="610" y="97">AWS S3 API</text>
+
+  <!-- AWS RDS API -->
+  <rect class="api" x="500" y="135" width="220" height="45" />
+  <text class="text" x="610" y="162">AWS RDS API</text>
+
+  <!-- AWS DynamoDB API -->
+  <rect class="api" x="500" y="200" width="220" height="45" />
+  <text class="text" x="610" y="227">AWS DynamoDB API</text>
+
+  <!-- Arrows -->
+  <path class="arrow" d="M 190 92.5 L 490 92.5" />
+  <text class="label" x="340" y="85">AWS SDK</text>
+
+  <path class="arrow" d="M 190 157.5 L 490 157.5" />
+  <text class="label" x="340" y="150">AWS SDK</text>
+
+  <path class="arrow" d="M 190 222.5 L 490 222.5" />
+  <text class="label" x="340" y="215">AWS SDK</text>
+</svg>

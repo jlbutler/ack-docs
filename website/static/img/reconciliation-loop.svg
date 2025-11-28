@@ -1,0 +1,68 @@
+<svg viewBox="0 0 600 650" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .box { fill: #fff; stroke: #ff9520; stroke-width: 2; rx: 8; }
+      .decision { fill: #fff7ed; stroke: #f59e0b; stroke-width: 2; rx: 8; }
+      .text { fill: #2d3748; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; }
+      .small-text { fill: #718096; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; text-anchor: middle; }
+      .arrow { stroke: #ff9520; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ff9520" />
+    </marker>
+  </defs>
+
+  <!-- Step 1: Watch -->
+  <rect class="box" x="130" y="20" width="320" height="50" />
+  <text class="text" x="290" y="50">1. Watch for changes to ACK resources</text>
+
+  <path class="arrow" d="M 290 70 L 290 95" />
+
+  <!-- Step 2: Get current state -->
+  <rect class="box" x="130" y="100" width="320" height="50" />
+  <text class="text" x="290" y="130">2. Get current state from AWS</text>
+
+  <path class="arrow" d="M 290 150 L 290 175" />
+
+  <!-- Step 3: Compare -->
+  <rect class="box" x="130" y="180" width="320" height="50" />
+  <text class="text" x="290" y="210">3. Compare desired vs actual state</text>
+
+  <path class="arrow" d="M 290 230 L 290 270" />
+
+  <!-- Decision point -->
+  <text class="small-text" x="180" y="265">Different?</text>
+  <text class="small-text" x="400" y="265">Same?</text>
+
+  <path class="arrow" d="M 230 270 L 180 300" />
+  <path class="arrow" d="M 350 270 L 400 300" />
+
+  <!-- Step 4a: Update AWS -->
+  <rect class="box" x="60" y="305" width="180" height="50" />
+  <text class="text" x="150" y="325">4. Update</text>
+  <text class="text" x="150" y="342">AWS</text>
+
+  <!-- Step 4b: Skip -->
+  <rect class="box" x="340" y="305" width="180" height="50" />
+  <text class="text" x="430" y="325">4. Skip</text>
+  <text class="text" x="430" y="342">(no changes)</text>
+
+  <!-- Arrows converging -->
+  <path class="arrow" d="M 150 355 L 150 410 L 290 410" />
+  <path class="arrow" d="M 430 355 L 430 410 L 290 410" />
+  <path class="arrow" d="M 290 410 L 290 435" />
+
+  <!-- Step 5: Update status -->
+  <rect class="box" x="130" y="440" width="320" height="50" />
+  <text class="text" x="290" y="470">5. Update status in Kubernetes</text>
+
+  <path class="arrow" d="M 290 490 L 290 515" />
+
+  <!-- Step 6: Wait -->
+  <rect class="box" x="130" y="520" width="320" height="50" />
+  <text class="text" x="290" y="545">6. Wait for next event or sync period</text>
+
+  <!-- Loop back arrow -->
+  <path class="arrow" d="M 450 545 L 540 545 L 540 45 L 450 45" stroke-dasharray="5,5" />
+  <text class="small-text" x="555" y="300" style="fill: #f59e0b;">Loop</text>
+</svg>
