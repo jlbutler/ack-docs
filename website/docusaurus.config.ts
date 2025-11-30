@@ -73,12 +73,12 @@ const config: Config = {
     // Social card for link previews (Twitter, Slack, etc.)
     image: "img/ack-social.png",
     announcementBar: {
-      id: "under_development",
+      id: "eks_capabilities_launch",
       content:
-        '<div style="min-height: 60px !important; height: 60px !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 16px 20px !important; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; letter-spacing: 0.4px; font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, sans-serif;">🚧 <strong style="font-weight: 600;">Under Development:</strong> This site will soon replace the <a target="_blank" rel="noopener noreferrer" href="https://aws-controllers-k8s.github.io/community" style="text-decoration: underline; font-weight: 600; margin-left: 8px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">legacy documentation →</a></div>',
+        '<div style="min-height: 60px !important; height: 60px !important; display: flex !important; align-items: center !important; justify-content: center !important; padding: 16px 20px !important; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; letter-spacing: 0.4px; font-family: -apple-system, BlinkMacSystemFont, \'Segoe UI\', Roboto, Oxygen, Ubuntu, sans-serif;">✨ <strong style="font-weight: 600;">Exciting News:</strong> ACK is now available as an EKS Capability <a target="_blank" rel="noopener noreferrer" href="https://aws.amazon.com/eks/" style="text-decoration: underline; font-weight: 600; margin-left: 8px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">Learn more →</a></div>',
       backgroundColor: "#0D9488",
-      textColor: "#ffffff",
-      isCloseable: false,
+      textColor: "#FFFFFF",
+      isCloseable: true,
     },
     colorMode: {
       respectPrefersColorScheme: false,

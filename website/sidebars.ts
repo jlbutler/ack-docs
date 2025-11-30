@@ -27,6 +27,12 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'doc',
+          id: 'getting-started-eks',
+          label: 'Using EKS Capabilities',
+          className: 'sidebar-item-new',
+        },
+        {
+          type: 'doc',
           id: 'getting-started-helm',
           label: 'Using Helm',
         },

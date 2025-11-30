@@ -5,33 +5,71 @@ title: Getting Started
 
 # Getting Started
 
-Get started with ACK by installing a controller using Helm. ACK works on any Kubernetes cluster including Amazon EKS, GKE, AKS, on-premises clusters, or local development environments.
+There are two ways to get started with ACK, depending on whether you're using Amazon EKS or running your own Kubernetes cluster.
+
+## Choose Your Installation Method
 
 <div className="row" style={{marginTop: '2rem', marginBottom: '2rem'}}>
-  <div className="col col--8 col--offset-2">
+  <div className="col col--6">
+    <div className="card" style={{border: '1px solid var(--ifm-color-emphasis-300)', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', borderRadius: '12px'}}>
+      <div className="card__header" style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
+        <img src="/docs/img/eks.png" alt="EKS" style={{width: '32px', height: '32px'}} />
+        <h3 style={{margin: 0}}>EKS Capabilities (Managed)</h3>
+      </div>
+      <div className="card__body">
+        <p><strong>Recommended for Amazon EKS users</strong></p>
+        <p>Enable ACK controllers with one click in the EKS console. AWS manages the controller installation and upgrades for you.</p>
+        <ul>
+          <li>Fastest setup - no Helm or CLI required</li>
+          <li>Automatic controller updates</li>
+          <li>Access to all controllers - use what you need</li>
+          <li>Auto-scaling and auto-tuning included</li>
+        </ul>
+        <a href="/docs/getting-started-eks" className="button button--primary button--block">Get Started with EKS Capabilities</a>
+      </div>
+    </div>
+  </div>
+  <div className="col col--6">
     <div className="card" style={{border: '1px solid var(--ifm-color-emphasis-300)', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', borderRadius: '12px'}}>
       <div className="card__header" style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
         <img src="/docs/img/helm-logo.svg" alt="Helm" style={{width: '32px', height: '32px'}} />
-        <h3 style={{margin: 0}}>Install with Helm</h3>
+        <h3 style={{margin: 0}}>Self-Managed Installation</h3>
       </div>
       <div className="card__body">
-        <p>Install ACK controllers using Helm charts. This gives you full control over versions and configuration.</p>
+        <p><strong>For any Kubernetes cluster</strong></p>
+        <p>Install ACK controllers yourself using Helm. Works on EKS, GKE, AKS, on-premises clusters, or local development environments.</p>
         <ul>
+          <li>Full control over versions and configuration</li>
           <li>Works on any Kubernetes 1.20+</li>
           <li>Access to all 50+ controllers</li>
-          <li>Full control over versions and configuration</li>
           <li>Customize controller settings</li>
         </ul>
-        <a href="/docs/docs/getting-started-helm" className="button button--primary button--block">Get Started with Helm</a>
+        <a href="/docs/getting-started-helm" className="button button--primary button--block">Get Started with Helm</a>
       </div>
     </div>
   </div>
 </div>
 
+## Which Method Should I Use?
+
+**Use EKS Capabilities if:**
+
+- You're running Amazon EKS
+- You want AWS to manage controller lifecycle
+- You want auto-scaling and auto-tuning capabilities
+- You prefer a managed experience
+
+**Use Self-Managed Installation if:**
+
+- You're running on GKE, AKS, or on-premises Kubernetes
+- You want full control over versions and configuration
+- You need to customize controller settings
+- You're developing or testing ACK controllers
+
 ## What's Next?
 
-After installing your first controller, you can:
+After installing your first controller using either method, you can:
 
-- **Explore Features**: Learn about [resource adoption](/guides/adoption), [cross-account management](/guides/cross-account), and [deletion policies](/guides/deletion-policy)
+- **Explore Features**: Learn about [resource adoption](/docs/guides/adoption), [cross-account management](/docs/guides/cross-account), and [deletion policies](/docs/guides/deletion-policy)
 - **Browse Controllers**: Check out the [full list of available controllers](/services)
-- **Understand Concepts**: Read about [CRDs, reconciliation, and architecture](/concepts)
+- **Understand Concepts**: Read about [CRDs, reconciliation, and architecture](/docs/concepts)
